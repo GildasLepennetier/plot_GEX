@@ -13,7 +13,7 @@ plot_me_that=function(dir,SYMBOL){
 			  text = element_text(size = 18), #this is for the legend
 			  axis.text = element_text(size = 26),
 			  axis.ticks = element_line(size=1))
-	OUTNAME=paste0(FEATURE,".pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off()
+	OUTNAME=paste0(FEATURE,".pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
 	Idents(GEX.singlet.integrated) <- "stream"
 	PLOT=VlnPlot(GEX.singlet.integrated,features=FEATURE,log=TRUE,pt.size = 0) + #slot = "counts", 
 		theme(axis.line = element_line(size=1),
@@ -22,7 +22,7 @@ plot_me_that=function(dir,SYMBOL){
 			  axis.title.x = element_blank(),
 			  axis.ticks = element_line(size=1),
 			  legend.position = 'none') #+ scale_y_continuous(limits = c(0, NA))
-	OUTNAME=paste0(FEATURE,"_Vplot_stream.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off()
+	OUTNAME=paste0(FEATURE,"_Vplot_stream.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
 	Idents(GEX.singlet.integrated) <- "group"
 	PLOT=VlnPlot(GEX.singlet.integrated,features=FEATURE,log=TRUE,pt.size = 0) + #slot = "counts", 
 		theme(axis.line = element_line(size=1),
@@ -31,5 +31,5 @@ plot_me_that=function(dir,SYMBOL){
 			  axis.title.x = element_blank(),
 			  axis.ticks = element_line(size=1),
 			  legend.position = 'none') #+ scale_y_continuous(limits = c(0, NA))
-	OUTNAME=paste0(FEATURE,"_Vplot_group.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off()
+	OUTNAME=paste0(FEATURE,"_Vplot_group.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
 }
