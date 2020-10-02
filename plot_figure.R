@@ -12,7 +12,7 @@ plot_figure=function(gene,dataset){
 			  text = element_text(size = 18), #this is for the legend
 			  axis.text = element_text(size = 26),
 			  axis.ticks = element_line(size=1))
-	OUTNAME=paste0(FEATURE,NAMETAG,".pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
+	OUTNAME=paste0("plots_Expression/",FEATURE,NAMETAG,".pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
 	Idents(GEX) <- "stream"
 	PLOT=VlnPlot(GEX,features=FEATURE,log=TRUE,pt.size = 0) + #slot = "counts", 
 		theme(axis.line = element_line(size=1),
@@ -21,7 +21,7 @@ plot_figure=function(gene,dataset){
 			  axis.title.x = element_blank(),
 			  axis.ticks = element_line(size=1),
 			  legend.position = 'none') #+ scale_y_continuous(limits = c(0, NA))
-	OUTNAME=paste0(FEATURE,NAMETAG,"_Vplot_stream.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
+	OUTNAME=paste0("plots_Expression/",FEATURE,NAMETAG,"_Vplot_stream.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
 	Idents(GEX) <- "group"
 	PLOT=VlnPlot(GEX,features=FEATURE,log=TRUE,pt.size = 0) + #slot = "counts", 
 		theme(axis.line = element_line(size=1),
@@ -30,6 +30,6 @@ plot_figure=function(gene,dataset){
 			  axis.title.x = element_blank(),
 			  axis.ticks = element_line(size=1),
 			  legend.position = 'none') #+ scale_y_continuous(limits = c(0, NA))
-	OUTNAME=paste0(FEATURE,NAMETAG,"_Vplot_group.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
+	OUTNAME=paste0("plots_Expression/",FEATURE,NAMETAG,"_Vplot_group.pdf");pdf(OUTNAME,width=10,height=10);print(PLOT);dev.off();print(paste("saved:",OUTNAME))
 	
 }
