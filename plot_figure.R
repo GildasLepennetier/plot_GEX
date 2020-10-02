@@ -2,10 +2,10 @@ plot_figure=function(gene,dataset){
 	setwd("/Users/TK/LRZ Sync+Share/Share_Bioinfo_Korn (Gildas Lepennetier)/2020.01.28_ScRNAseq_i-stream_vs_m-stream_3prime-5prime-combined")
 	require(Seurat)
 	require(ggplot2)
-  #"3-prime" # OR	"5-prime"	"combined5+3"
-  if(dataset=="3-prime"){GEX=readRDS("GEX_3.Rds");NAMETAG="_3prime"}
-  if(dataset=="5-prime"){GEX=readRDS("GEX_5.Rds");NAMETAG="_5prime"}
-  if(dataset=="combined5+3"){GEX=readRDS("GEX.singlet.integrated.rds");NAMETAG="_Combined5+3"}
+	  #"3-prime" # OR	"5-prime"	"combined5+3"
+	  if(dataset=="3-prime"){GEX=readRDS("GEX_3.Rds");NAMETAG="_3prime"}
+	  if(dataset=="5-prime"){GEX=readRDS("GEX_5.Rds");NAMETAG="_5prime"}
+	  if(dataset=="combined5+3"){GEX=readRDS("GEX.singlet.integrated.rds");NAMETAG="_Combined5+3"}
 	FEATURE=SYMBOL
 	PLOT=FeaturePlot(GEX,features=FEATURE,pt.size=3,sort.cell=TRUE) + 
 		theme(axis.line = element_line(size=1),
