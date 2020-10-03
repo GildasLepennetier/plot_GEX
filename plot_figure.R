@@ -8,7 +8,7 @@ plot_figure=function(gene,dataset){
 	if(dataset=="5-prime"){GEX=readRDS("GEX_5.Rds");NAMETAG="_5prime"}
 	if(dataset=="combined5+3"){GEX=readRDS("GEX.singlet.integrated.rds");NAMETAG="_Combined5+3"}
 	#check that the gene exists
-	if( length(grep( pattern = gene, x = rownames( GEX ), ignore.case = TRUE, value = TRUE)) != 1 ){print("Error: gene was not found, please check the name!");return()}
+	if( length(grep( pattern = gene, x = rownames( GEX ), ignore.case = TRUE, value = TRUE)) >= 1 ){print("Error: gene was not found, please check the name!");return()}
 	
 	OUTDIR=paste0("plots_Expression",NAMETAG,"/")
 	dir.create(OUTDIR,showWarnings=F)
